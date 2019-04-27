@@ -4,7 +4,7 @@
 #
 Name     : R-parsedate
 Version  : 1.1.3
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/parsedate_1.1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/parsedate_1.1.3.tar.gz
 Summary  : Recognize and Parse Dates in Various Formats, Including All ISO
