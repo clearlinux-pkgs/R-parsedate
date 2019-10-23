@@ -4,7 +4,7 @@
 #
 Name     : R-parsedate
 Version  : 1.2.0
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/parsedate_1.2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/parsedate_1.2.0.tar.gz
 Summary  : Recognize and Parse Dates in Various Formats, Including All ISO
@@ -12,11 +12,15 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-parsedate-lib = %{version}-%{release}
 Requires: R-rematch2
+BuildRequires : R-assertthat
+BuildRequires : R-cli
 BuildRequires : R-rematch2
+BuildRequires : R-withr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-# parsedate â Parse dates from ISO 8601, and guess the format
+# parsedate — Parse dates from ISO 8601, and guess the format
 [![Linux Build Status](https://travis-ci.org/gaborcsardi/parsedate.svg?branch=master)](https://travis-ci.org/gaborcsardi/parsedate)
 [![Windows build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/parsedate?svg=true)](https://ci.appveyor.com/project/gaborcsardi/parsedate)
 [![](http://www.r-pkg.org/badges/version/parsedate)](http://www.r-pkg.org/pkg/parsedate)
@@ -38,13 +42,13 @@ lib components for the R-parsedate package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1557334564
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571871343
 
 %install
-export SOURCE_DATE_EPOCH=1557334564
+export SOURCE_DATE_EPOCH=1571871343
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -73,7 +77,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
