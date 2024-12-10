@@ -1,5 +1,5 @@
 PKG_NAME := R-parsedate
-URL = https://cran.r-project.org/src/contrib/parsedate_1.3.1.tar.gz
+URL = https://ftp.osuosl.org/pub/cran/src/contrib/parsedate_1.3.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
